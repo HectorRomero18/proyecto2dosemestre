@@ -38,7 +38,7 @@ export const Skills = () => {
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
                       {/* Aquí va el enncabezado del componente */}
-                        <h2>Utilzado</h2>
+                        <h2>Utilizado</h2>
                         <p>Este Blog estará impulsado por React<br></br>Ademas de usar distinntas dependecias y herramientas</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                           {/* Aqui van las imagenes dentro del componente, usamos un carrusel */}

@@ -74,7 +74,7 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Bienvenido a nuestro Blog!</span>
-                <h1>{`Somos Unemi`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
+                <h1>{`Somos Unemi`} <span className="txt-rotate" data-period="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
                   <p>
                   Explora artículos fascinantes, descubre consejos útiles y mantente al día con las últimas tendencias en nuestro blog. Sumérgete en contenidos que inspiran, educan y entretienen mientras te acompañamos en tu viaje de conocimiento y descubrimiento. Únete a nuestra comunidad y haz del aprendizaje una experiencia emocionante y enriquecedora.
                   </p>
