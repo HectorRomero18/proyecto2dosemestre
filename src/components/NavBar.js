@@ -9,7 +9,6 @@ import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
 import { MenuButton } from "react-bootstrap-icons";
 
-
 // Componente
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home'); //Aquí se manejara el tema de los links para navegar en la misma pagina
@@ -22,8 +21,6 @@ const NavBar = () => {
       href: "/pruebas"
     }
   ]
-
-
 
   // Funcion que se encargará del efecto del Scroll
   useEffect(() => {
@@ -73,14 +70,10 @@ const NavBar = () => {
                 <MenuButton /> {/* Ícono de list de Bootstrap Icons */}
               </Dropdown.Toggle>
               <Dropdown.Menu>
-          {/* Enlace que se mostrará despues de presionar el menú desplegable */}
-                <Dropdown.Item href="/Pages/Pruebas">Crear</Dropdown.Item>
-          {/* Enlace que se mostrará despues de presionar el menú desplegable */}
-
-                <Dropdown.Item href="#action/2">Editar</Dropdown.Item>
-          {/* Enlace que se mostrará despues de presionar el menú desplegable */}
-
-                <Dropdown.Item href="#action/3">Eliminar</Dropdown.Item>
+                {/* Enlaces que se mostrarán después de presionar el menú desplegable */}
+                <Dropdown.Item as={Link} to="/crear">Crear</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/editar">Mis Publicaciones</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/eliminar">Eliminar</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Nav>
@@ -92,18 +85,15 @@ const NavBar = () => {
               <a href="#"><img src={navIcon3} alt="" /></a>
             </div>
             {/* Boton de Cerrar Sesión */}
-              <button className="vvd">
-                  
-                  {List.map((x) => (
-                    <Link key={x.name} to={x.href}>{x.name}</Link>
-                  ))}
-                </button>
-
+            <button className="vvd">
+              <Link to='/crear'>Cerrar Sesión</Link>
+            </button>
           </span>
-        </Navbar.Collapse> 
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   )
 }
 
 export default NavBar;
+

@@ -305,6 +305,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-right: 0.08em solid #666;
 }
 
+/* ************ CSS DE PRUEBAS ************* */
+.pruebitas{
+background-color: pink;
+padding: 200px;
+font-size: 59px
+}
+
 /************ Skills Css ************/
 .skill {
   padding: 0 0 50px 0;
@@ -388,6 +395,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: 0.3s ease-in-out;
   text-align: center;
   z-index: 0;
+  cursor: pointer;
 }
 .project .nav.nav-pills .nav-link::before {
     content: "";
@@ -423,6 +431,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 24px;
+  cursor: pointer;
 }
 .proj-imgbx::before {
   content: "";
@@ -451,12 +460,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   opacity: 1;
 }
 .proj-txtx h4 {
+  color: #fff;
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1.1em;
 }
 .proj-txtx span {
+  color: #fff;
   font-style: italic;
   font-weight: 400;
   font-size: 15px;

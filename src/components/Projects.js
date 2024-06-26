@@ -10,41 +10,48 @@ import projImg6 from "../assets/img/otro.jfif";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import {Link} from "react-router-dom"
 
 // Componente
 export const Projects = () => {
-
   // Establecemos un arreglo que conntenndra la información que mostraremos en las cartas
   const projects = [
     {
       title: "Tecnologias",
       description: "Noticias nuevas",
       imgUrl: projImg1,
+      link: '/crear'
+      
     },
     {
       title: "Música",
       description: "Nuevos Lanzamientos",
       imgUrl: projImg2,
+      link: '/crear'
     },
     {
       title: "Deportes",
       description: "Competiciones",
       imgUrl: projImg3,
+      link: '/crear'
     },
     {
       title: "Ciencia",
       description: "Avances",
       imgUrl: projImg4,
+      link: '/crear'
     },
     {
       title: "Cine",
       description: "Nuevos Lanzamientos",
       imgUrl: projImg5,
+      link: '/crear'
     },
     {
       title: "Otros",
       description: "Descubre",
       imgUrl: projImg6,
+      link: '/crear'
     },
   ];
 
