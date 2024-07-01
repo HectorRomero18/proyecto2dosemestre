@@ -1,26 +1,20 @@
-// Importamos dependencias
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Dropdown } from "react-bootstrap";
-import { HashLink } from 'react-router-hash-link';
 import { Link } from "react-router-dom";
-import logo from '../assets/img/unemi.jfif';
+import { List } from 'react-bootstrap-icons'; // Importamos el icono de menú
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
-import { MenuButton } from "react-bootstrap-icons";
+import { Translate, Person, Gear, InfoCircle, FileCode, BoxArrowRight } from 'react-bootstrap-icons';
+import { useTranslation } from 'react-i18next';
 
-// Componente
+
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home'); //Aquí se manejara el tema de los links para navegar en la misma pagina
   const [scrolled, setScrolled] = useState(false); //Aqui se maneja el tema de cuando el usuario se desplace hacia arriba y abajo (scroll)
   const [showDropdown, setShowDropdown] = useState(false); // Estado para controlar la visibilidad del menú desplegable
-
-  const List = [
-    {
-      name: "Cerrar Sesión",
-      href: "/pruebas"
-    }
-  ]
+  const [isNavOpen, setIsNavOpen] = useState(false); // Estado para la barra de navegación vertical
+  const { t, i18n } = useTranslation();
 
   // Funcion que se encargará del efecto del Scroll
   useEffect(() => {
@@ -50,50 +44,74 @@ const NavBar = () => {
     setShowDropdown(!showDropdown);
   }
 
+  // Función para mostrar/ocultar la barra de navegación vertical
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  }
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
-    <Navbar id="nav-1" expand="md" className={scrolled ? "scrolled" : ""}>
-      <Container>
-        {/* Aquí va el logo de esta pagina Web (Unemi) */}
-        <Navbar.Brand href="/">
-          <img src={logo} alt="Logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            {/* Links (home, Pagina/Blog, Utilizado) */}
-            <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-            <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Utilizado</Nav.Link>
-            <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Páginas/Blog</Nav.Link>
-            {/* Dropdown */}
-            <Dropdown show={showDropdown} onToggle={toggleDropdown}>
-              <Dropdown.Toggle as={Nav.Link} className="navbar-link" id="dropdown-basic">
-                <MenuButton /> {/* Ícono de list de Bootstrap Icons */}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                {/* Enlaces que se mostrarán después de presionar el menú desplegable */}
-                <Dropdown.Item as={Link} to="/crear">Crear</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/editar">Mis Publicaciones</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/eliminar">Eliminar</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Nav>
-          {/* Iconos de las redes sociales */}
-          <span className="navbar-text">
-            <div className="social-icon">
-              <a href="#"><img src={navIcon1} alt="" /></a>
-              <a href="#"><img src={navIcon2} alt="" /></a>
-              <a href="#"><img src={navIcon3} alt="" /></a>
-            </div>
-            {/* Boton de Cerrar Sesión */}
-            <button className="vvd">
-              <Link to='/crear'>Cerrar Sesión</Link>
-            </button>
-          </span>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <>
+      <Navbar id="nav-1" expand="md" className={scrolled ? "scrolled" : ""}>
+        <Container>
+          {/* Icono de menú */}
+          <button className="menu-button" onClick={toggleNav}>
+            <List size={80} /> {/* Usamos el icono de Bootstrap Icons */}
+          </button>
+          {/* Aquí va el logo de esta pagina Web (Unemi) */}
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              {/* Links (home, Pagina/Blog, Utilizado) */}
+              <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>{t('home')}</Nav.Link>
+              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>{t('skills')}</Nav.Link>
+              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>{t('projects')}</Nav.Link>
+              {/* Dropdown */}
+              <Dropdown show={showDropdown} onToggle={toggleDropdown}>
+                <Dropdown.Toggle as={Nav.Link} className="navbar-link" id="dropdown-basic">
+                  <List size={24} /> {/* Ícono de list de Bootstrap Icons */}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  {/* Enlaces que se mostrarán después de presionar el menú desplegable */}
+                  <Dropdown.Item as={Link} to="/crear">{t('create')}</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/editar">{t('myPublications')}</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/eliminar">{t('delete')}</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Nav>
+            {/* Iconos de las redes sociales */}
+            <span className="navbar-text">
+              <div className="social-icon">
+                <a href="#"><img src={navIcon1} alt="" /></a>
+                <a href="#"><img src={navIcon2} alt="" /></a>
+                <a href="#"><img src={navIcon3} alt="" /></a>
+              </div>
+              {/* Boton de Cerrar Sesión */}
+              <button className="vvd">
+                <Link to='/crear'>{t('logout')}</Link>
+              </button>
+            </span>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <div className={`vertical-nav ${isNavOpen ? 'open' : ''}`}>
+        <ul>
+          <li><button onClick={() => changeLanguage(i18n.language === 'es' ? 'en' : 'es')}><Translate size={24} /></button></li>
+          <li><Person size={24} /></li>
+          <li><Gear size={24} /></li>
+          <li><InfoCircle size={24} /></li>
+          <li><FileCode size={24} /></li>
+          <li><BoxArrowRight size={24} /></li>
+        </ul>
+      </div>
+    </>
   )
 }
 
 export default NavBar;
+
+
 

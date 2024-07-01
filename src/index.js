@@ -5,7 +5,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Crear from "./Pages/Crear"
 import  Eliminar  from "./Pages/Eliminar"
 import  Editar  from "./Pages/Editar"
+import  Musica  from "./Pages/Musica"
+import  "./translate/i18n"
 import App from './App'; // Ruta al componente principal de tu aplicación
+
+// Rutas que usara nuestra App de React
 const routers = createBrowserRouter([
     {
         path: '/crear',
@@ -22,6 +26,10 @@ const routers = createBrowserRouter([
     {
         path: '/editar',
         element: <Editar/>
+    },
+    {
+        path: '/musica',
+        element: <Musica/>
     }
 ])
 

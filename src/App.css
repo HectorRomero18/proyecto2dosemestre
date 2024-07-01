@@ -90,6 +90,64 @@ nav.navbar {
   z-index: 9999;
   transition:  0.32s ease-in-out;
 }
+/* Estilos para la barra de navegación horizontal */
+.navbar {
+  padding: 18px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  transition: 0.32s ease-in-out;
+  background-color: #121212;
+}
+
+.navbar .menu-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.vertical-nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 5.5cm;
+  background-color: rgb(105, 190, 243);
+  transition: 0.3s ease-in-out;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical-nav.open {
+  left: 0;
+}
+
+.vertical-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.vertical-nav ul li {
+  margin: 25px 0;
+  cursor: pointer;
+}
+
+.vertical-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.vertical-nav ul li a:hover {
+  color: #10cff9;
+}
+
 #nav-1{
   background-color: rgb(105, 190, 243);
 }
@@ -632,3 +690,58 @@ font-size: 59px
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
+
+/* Css para el componente de Musica.js */
+.musica-background{
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.musica-container {
+  position: relative; /* Añadimos position relative para z-index */
+  z-index: 1; /* Añadimos z-index para el contenedor */
+}
+
+.musica-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Agregamos transición para el filtro */
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative; /* Añadimos position relative para z-index */
+  z-index: 1; /* Añadimos z-index para cada carta */
+}
+
+.musica-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.musica-card.active {
+  transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 3; /* Aumentamos z-index para la carta activa */
+  width: 90%;
+  max-width: 600px;
+  transition: transform 0.3s ease;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  filter: none; /* Quitamos el filtro para la carta activa */
+}
+
+.musica-card:not(.active) {
+  filter: brightness(70%) blur(1px); /* Aplicamos filtro de brillo y desenfoque para las cartas inactivas */
+}
+
+.musica-card-collapse {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .musica-card.active {
+    width: 100%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+
