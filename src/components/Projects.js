@@ -1,4 +1,5 @@
-// Importamos dependencias
+import React from "react";
+import { useTranslation } from 'react-i18next';
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/Tecnology.jfif";
@@ -10,41 +11,47 @@ import projImg6 from "../assets/img/otro.jfif";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import { Link } from "react-router-dom";
 
-// Componente
 export const Projects = () => {
+  const { t } = useTranslation();
 
-  // Establecemos un arreglo que conntenndra la información que mostraremos en las cartas
   const projects = [
     {
-      title: "Tecnologias",
-      description: "Noticias nuevas",
+      title: t('technologies'),
+      description: t('discoverNews'),
       imgUrl: projImg1,
+      link: '/crear'
     },
     {
-      title: "Música",
-      description: "Nuevos Lanzamientos",
+      title: t('music'),
+      description: t('discoverNews'),
       imgUrl: projImg2,
+      link: '/musica'
     },
     {
-      title: "Deportes",
-      description: "Competiciones",
+      title: t('sports'),
+      description: t('discoverNews'),
       imgUrl: projImg3,
+      link: '/crear'
     },
     {
-      title: "Ciencia",
-      description: "Avances",
+      title: t('science'),
+      description: t('discoverNews'),
       imgUrl: projImg4,
+      link: '/crear'
     },
     {
-      title: "Cine",
-      description: "Nuevos Lanzamientos",
+      title: t('movies'),
+      description: t('discoverNews'),
       imgUrl: projImg5,
+      link: '/crear'
     },
     {
-      title: "Otros",
-      description: "Descubre",
+      title: t('others'),
+      description: t('discoverNews'),
       imgUrl: projImg6,
+      link: '/crear'
     },
   ];
 
@@ -55,52 +62,43 @@ export const Projects = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Páginas/Blog</h2>
-                <p>Descubre nuevas noticias y mantente actualizado!!</p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                    {/* Aqui ira la barra de seleccion */}
-                    <Nav.Item>
-                      <Nav.Link eventKey="first">Primero</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="second">Segundo</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="third">Tercero</Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                    <Tab.Pane eventKey="first">
-                      {/* Aplicamos cambios de diseño usando el map */}
-                      <Row>
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                                />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container>
-              </div>}
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <h2>{t('blogPages')}</h2>
+                  <p>{t('discoverNews')}</p>
+                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                    <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                      <Nav.Item>
+                        <Nav.Link eventKey="first">{t('first')}</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="second">{t('second')}</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="third">{t('third')}</Nav.Link>
+                      </Nav.Item>
+                    </Nav>
+                    <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                      <Tab.Pane eventKey="first">
+                        <Row>
+                          {projects.map((project, index) => (
+                            <ProjectCard key={index} {...project} />
+                          ))}
+                        </Row>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="second">
+                        <p>{t('noItems')}</p>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="third">
+                        <p>{t('noItems')}</p>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Tab.Container>
+                </div>}
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+      <img className="background-image-right" src={colorSharp2} alt="Image" />
     </section>
   )
 }
