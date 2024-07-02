@@ -153,6 +153,6 @@
 
 /* Color negro para el texto "No hay publicaciones aún." */
 .no-posts {
-  color: #333;
+  color: #000000;
   text-align: center;
 }

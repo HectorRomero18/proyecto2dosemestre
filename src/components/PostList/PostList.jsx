@@ -33,8 +33,8 @@ function PostList({ posts, editPost, deletePost }) {
                 <EditPost
                   post={post}
                   onSave={(updatedPost) => {
-                    editPost(updatedPost); // Llama a la función editPost con la publicación actualizada
-                    toggleEdit(index); // Cierra el modo de edición al guardar
+                    editPost(updatedPost);  // Llama a la función editPost con la publicación actualizada
+                    toggleEdit(index);  // Cierra el modo de edición al guardar
                   }}
                   onDelete={() => deletePost(post.id)} // Llama a la función deletePost con el ID de la publicación a eliminar
                 />

@@ -15,6 +15,7 @@ const CreatePost = ({ onSubmit }) => {
     setContent(''); // Reinicia el estado del contenido a una cadena vacía
   };
 
+  
   // Renderiza el formulario de creación de post
   return (
     <div className="create-post"> {/* Contenedor principal con clase "create-post" */}

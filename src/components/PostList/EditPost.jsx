@@ -25,7 +25,8 @@ const EditPost = ({ post, onSave, onDelete }) => {
 
   // Función para manejar la eliminación del post
   const handleDelete = () => {
-    onDelete(post.id); // Llama a la función onDelete con el ID del post a eliminar
+    // Llama a la función onDelete con el ID del post a eliminar
+    onDelete(post.id); 
   };
 
   return (

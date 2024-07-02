@@ -12,6 +12,7 @@ function TeachList({ posts }) {
     setExpandedPostIndex(expandedPostIndex === index ? null : index);
   };
 
+  
   return (
     <div className="teach-list"> {/* Contenedor principal de TeachList */}
     {/* Verifica si hay publicaciones */}
