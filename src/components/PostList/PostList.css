@@ -1,0 +1,158 @@
+.post-list {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post {
+  position: relative;
+  padding: 20px 15px; /* Aumenta el espacio interno verticalmente */
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.post h3 {
+  color: #333; /* Color negro para el título */
+}
+
+.post p {
+  color: #333; /* Color negro para el contenido */
+  line-height: 1.6;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  margin-bottom: 15px; /* Espacio inferior entre el contenido y el botón "Leer más" */
+}
+
+.post p.expanded {
+  max-height: none; /* Sin límite de altura cuando está expandido */
+}
+
+.delete-button,
+.edit-button {
+  background-color: #dc3545; /* Rojo para eliminar */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave */
+  width: calc(50% - 5px); /* Ajusta el ancho para que ocupen la mitad del contenedor */
+  display: inline-block; /* Ajusta a bloque en línea */
+  text-align: center; /* Centra el texto dentro del botón */
+  margin-top: 10px; /* Alineación con otros botones */
+}
+
+.delete-button:hover,
+.edit-button:hover {
+  background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
+}
+
+.edit-button {
+  background-color: #28a745; /* Verde para editar */
+}
+
+.edit-button:hover {
+  background-color: #218838; /* Verde más oscuro al pasar el ratón */
+}
+
+.read-more {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Ajusta el ancho al 100% */
+  display: block; /* Cambia a bloque para que esté debajo */
+  text-align: center; /* Centra el texto dentro del botón */
+  margin-top: 10px; /* Espacio superior entre el contenido y el botón "Leer más" */
+}
+
+.read-more:hover {
+  background-color: #0056b3;
+}
+
+.save-button {
+  background-color: #28a745; /* Verde para guardar cambios */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+  width: calc(50% - 5px); /* Ajusta el ancho para que ocupen la mitad del contenedor */
+  display: inline-block; /* Ajusta a bloque en línea */
+  text-align: center; /* Centra el texto dentro del botón */
+  margin-top: 10px; /* Alineación con otros botones */
+}
+
+.save-button:hover {
+  background-color: #218838; /* Verde más oscuro al pasar el ratón */
+}
+
+.cancel-button {
+  background-color: #007bff; /* Azul para cancelar */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+  width: calc(50% - 5px); /* Ajusta el ancho para que ocupen la mitad del contenedor */
+  display: inline-block; /* Ajusta a bloque en línea */
+  text-align: center; /* Centra el texto dentro del botón */
+  margin-top: 10px; /* Alineación con otros botones */
+}
+
+.cancel-button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Estilos para el formulario de edición */
+
+.edit-form {
+  margin-top: 20px; /* Espacio superior entre el formulario y el contenido anterior */
+  width: 100%; /* Ajusta el ancho del formulario de edición */
+}
+
+.edit-form textarea {
+  width: calc(100% - 20px); /* Ocupa el ancho completo del contenedor menos el espacio del padding */
+  height: 300px; /* Ajusta la altura del área de texto según sea necesario */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+.edit-form .button-group {
+  display: flex;
+  gap: 15px; /* Espacio entre los botones */
+  margin-top: 15px; /* Espacio superior entre el grupo de botones y el contenido anterior */
+}
+
+.edit-form .button-group button {
+  flex: 1;
+}
+
+/* Ajuste para separar los botones Editar y Eliminar */
+.edit-post {
+  margin-top: 10px;
+}
+
+/* Color negro para el texto "No hay publicaciones aún." */
+.no-posts {
+  color: #333;
+  text-align: center;
+}

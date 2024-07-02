@@ -1,0 +1,46 @@
+.create-post {
+  max-width: 600px; /* Establece el ancho máximo del componente */
+  margin: 20px auto; /* Centra el componente horizontalmente con un margen superior e inferior de 20px */
+  padding: 20px; /* Añade espacio interno alrededor del contenido del componente */
+  background-color: #f9f9f9; /* Color de fondo */
+  border-radius: 8px; /* Borde redondeado */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.create-post .form-group {
+  margin-bottom: 15px; /* Espacio inferior entre grupos de campos */
+}
+
+.create-post label {
+  display: block; /* Muestra la etiqueta como bloque para que cada una ocupe una línea */
+  font-weight: bold; /* Texto en negrita */
+  margin-bottom: 5px; /* Espacio inferior entre etiqueta y campo */
+  color: #000; /* Cambia el color del texto a negro */
+}
+
+.create-post input[type="text"],
+.create-post textarea {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 10px; /* Espacio interno dentro de los campos de entrada y área de texto */
+  border: 1px solid #ccc; /* Borde delgado con color gris claro */
+  border-radius: 5px; /* Borde redondeado */
+  resize: vertical; /* Permite redimensionar verticalmente el área de texto */
+}
+
+.create-post textarea {
+  height: 300px; /* Ajusta la altura inicial del área de texto a 300px */
+}
+
+.create-post button {
+  background-color: #007bff; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Borde redondeado */
+  padding: 10px 15px; /* Espacio interno del botón */
+  cursor: pointer; /* Cursor al pasar por encima */
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+.create-post button:hover {
+  background-color: #0056b3; /* Color de fondo más oscuro al pasar el ratón */
+}
