@@ -89,10 +89,11 @@ const NavBar = () => {
                 <a href="#"><img src={navIcon2} alt="" /></a>
                 <a href="#"><img src={navIcon3} alt="" /></a>
               </div>
-              {/* Boton de Cerrar Sesión */}
-              <button className="vvd">
-                <Link to='/crear'>{t('logout')}</Link>
-              </button>
+              {/* Boton de Iniciar Sesión */}
+                <button className="vvd">
+                  <a href="https://test242212.000webhostapp.com/index.php" rel="noopener noreferrer">{t('logout')}</a>
+                </button>
+
             </span>
           </Navbar.Collapse>
         </Container>
@@ -100,11 +101,12 @@ const NavBar = () => {
       <div className={`vertical-nav ${isNavOpen ? 'open' : ''}`}>
         <ul>
           <li><button onClick={() => changeLanguage(i18n.language === 'es' ? 'en' : 'es')}><Translate size={24} /></button></li>
-          <li><Person size={24} /></li>
-          <li><Gear size={24} /></li>
-          <li><InfoCircle size={24} /></li>
-          <li><FileCode size={24} /></li>
-          <li><BoxArrowRight size={24} /></li>
+          <li><button><Gear size={24} /></button></li>
+          <li><button><InfoCircle size={24} /></button></li>
+          <li><button><Person size={24} /></button></li>
+          <li><button><FileCode size={24} /></button></li>
+          <li><button><BoxArrowRight size={24} /></button></li>
+         
         </ul>
       </div>
     </>

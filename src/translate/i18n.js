@@ -12,7 +12,7 @@ const resources = {
       "create": "Create",
       "myPublications": "My Publications",
       "delete": "Delete",
-      "logout": "Logout",
+      "logout": "Log out",
       "darkMode": "Dark Mode",
       
         "welcome": "Welcome to our Blog!",

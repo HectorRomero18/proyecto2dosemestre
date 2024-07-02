@@ -109,6 +109,7 @@ nav.navbar {
   margin-right: 15px;
 }
 
+
 .vertical-nav {
   position: fixed;
   top: 0;
@@ -132,7 +133,8 @@ nav.navbar {
   padding: 0;
 }
 
-.vertical-nav ul li {
+.vertical-nav ul li button {
+  color: #fff;
   margin: 25px 0;
   cursor: pointer;
 }

@@ -65,7 +65,7 @@ const Musica = () => {
                 <NavDropdown.Item as={Link} to="/musica">Contactos</NavDropdown.Item> {/* Enlace a la página de música */}
                 <NavDropdown.Item as={Link} to="/musica">Configuración</NavDropdown.Item> {/* Enlace a la configuración */}
               </NavDropdown>
-              <Nav.Link as={Link} to="/" className="ml-5"> {/* Enlace al inicio con ícono de House */}
+              <Nav.Link as={Link} to="/app" className="ml-5"> {/* Enlace al inicio con ícono de House */}
                 <House size={29} /> {/* Ícono de House */}
               </Nav.Link>
               {/* Puedes agregar más enlaces aquí según sea necesario */}

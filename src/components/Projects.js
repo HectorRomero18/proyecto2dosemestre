@@ -21,7 +21,7 @@ export const Projects = () => {
       title: t('technologies'),
       description: t('discoverNews'),
       imgUrl: projImg1,
-      link: '/crear'
+      link: '/tecnologias'
     },
     {
       title: t('music'),
@@ -45,7 +45,7 @@ export const Projects = () => {
       title: t('movies'),
       description: t('discoverNews'),
       imgUrl: projImg5,
-      link: '/crear'
+      link: '/cine'
     },
     {
       title: t('others'),

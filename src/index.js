@@ -6,6 +6,9 @@ import Crear from "./Pages/Crear"
 import  Eliminar  from "./Pages/Eliminar"
 import  Editar  from "./Pages/Editar"
 import  Musica  from "./Pages/Musica"
+import Tecnologias  from "./Pages/Tecnologias"
+import Login  from "./Login/Register"
+import Cine  from "./Pages/Cine"
 import  "./translate/i18n"
 import App from './App'; // Ruta al componente principal de tu aplicación
 
@@ -17,7 +20,7 @@ const routers = createBrowserRouter([
     },
     {
         path: '/',
-        element: <App/>
+        element: <Login/>
     },
     {
         path: '/eliminar',
@@ -30,6 +33,18 @@ const routers = createBrowserRouter([
     {
         path: '/musica',
         element: <Musica/>
+    },
+    {
+        path: '/tecnologias',
+        element: <Tecnologias/>
+    },
+    {
+        path: '/cine',
+        element: <Cine/>
+    },
+    {
+        path: '/app',
+        element: <App/>
     }
 ])
 
