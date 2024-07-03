@@ -1,22 +1,19 @@
-// TeachList.js
-
 import React, { useState } from 'react';
 import './TeachList.css'; // Asegúrate de importar tu archivo CSS
 
-  // Estado para rastrear el índice de la publicación expandida
-function TeachList({ posts }) {
+// Estado para rastrear el índice de la publicación expandida
+function TeachList({ posts = [] }) {
   const [expandedPostIndex, setExpandedPostIndex] = useState(null);
 
-// Función para alternar entre expandir y contraer el contenido de la publicación
+  // Función para alternar entre expandir y contraer el contenido de la publicación
   const toggleReadMore = (index) => {
     setExpandedPostIndex(expandedPostIndex === index ? null : index);
   };
 
-  
   return (
-    <div className="teach-list"> {/* Contenedor principal de TeachList */}
-    {/* Verifica si hay publicaciones */}
-      {posts.length > 0 ? ( 
+    <div className="teach-list">
+      {/* Verifica si hay publicaciones */}
+      {posts.length > 0 ? (
         posts.map((post, index) => {
           // Determina si la publicación está expandida
           const isExpanded = expandedPostIndex === index;
@@ -38,7 +35,7 @@ function TeachList({ posts }) {
           );
         })
       ) : (
-        <p>No hay publicaciones aún.</p> 
+        <p>No hay publicaciones aún.</p>
       )}
     </div>
   );

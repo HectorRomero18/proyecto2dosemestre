@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './PostList.css'; // Importa el archivo CSS para los estilos de PostList
 import EditPost from './EditPost'; // Importa el componente EditPost, asegúrate de que la ruta sea correcta
 
-function PostList({ posts, editPost, deletePost }) {
+function PostList({ posts = [], editPost, deletePost }) {
   // Estados para controlar qué publicación está expandida y cuál está en modo de edición
   const [expandedPostIndex, setExpandedPostIndex] = useState(null);
   const [editingPostIndex, setEditingPostIndex] = useState(null);

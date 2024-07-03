@@ -6,7 +6,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    font-family: cursive;
+    font-family: Roboto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,9 +14,10 @@
   }
   
   .register-card {
-    background-color: transparent;
+    background-color: rga(181, 209, 236, 0.5);
     padding: 80px;
-    border: 1px solid #fff;
+    border: 2px solid rgba(255, 255, 255, 5);
+    backdrop-filter: blur(20px);
     box-sizing: border-box;
     border-radius: 20px;
     box-shadow: 0 7px 18px rgba(0, 0, 0, 0.1);
@@ -29,7 +30,8 @@
   .register-card h1 {
     color: #fff;
     margin: 30px;
-    font-size: 34px;
+    font-size: 44px;
+    font-weight: bolder;
     margin-bottom: 20px;
   }
   
@@ -55,7 +57,7 @@
   
   .register-card-container .register-card .register-button:hover {
     color: #ffffff; /* Cambio de color del texto al hacer hover */
-    background-color: #000000; /* Nuevo color de fondo al hacer hover */
+    background-color: #46A2FD; /* Nuevo color de fondo al hacer hover */
   }
   
   .register-card-container .register-card .register-button::before {

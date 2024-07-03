@@ -2,7 +2,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Crear from "./Pages/Crear"
+import CreatePost from "./components/CreatePost/CreatePost.jsx"
+import PostList from "./components/PostList/PostList.jsx"
+import TeachList from "./components/TeachList/TeachList.jsx"
 import  Eliminar  from "./Pages/Eliminar"
 import  Editar  from "./Pages/Editar"
 import  Musica  from "./Pages/Musica"
@@ -16,7 +18,7 @@ import App from './App'; // Ruta al componente principal de tu aplicación
 const routers = createBrowserRouter([
     {
         path: '/crear',
-        element: <Crear/>
+        element: <CreatePost/>
     },
     {
         path: '/',
@@ -24,11 +26,11 @@ const routers = createBrowserRouter([
     },
     {
         path: '/eliminar',
-        element: <Eliminar/>
+        element: <PostList/>
     },
     {
         path: '/editar',
-        element: <Editar/>
+        element: <TeachList/>
     },
     {
         path: '/musica',
