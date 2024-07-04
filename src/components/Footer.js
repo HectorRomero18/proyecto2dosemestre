@@ -24,7 +24,7 @@ export const Footer = () => {
               <a href="#"><img src={navIcon2} alt="Icon" /></a>
               <a href="#"><img src={navIcon3} alt="Icon" /></a>
             </div>
-            <p>Página hecha por estudiantes de UNEMI</p>
+            <p>Blog hecho por estudiantes de UNEMI</p>
           </Col>
         </Row>
       </Container>

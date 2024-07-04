@@ -151,7 +151,7 @@ nav.navbar {
 }
 
 #nav-1{
-  background-color: rgb(105, 190, 243);
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
 }
 nav.navbar.scrolled {
   padding: 0px 0;
@@ -298,7 +298,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -416,7 +416,7 @@ font-size: 59px
 .project {
   padding: 80px 0;
   position: relative;
-  background-color: black;
+  background-color: rgb(234, 164, 42);
 }
 .project h2 {
 	font-size: 45px;
@@ -424,7 +424,7 @@ font-size: 59px
   text-align: center;
 }
 .project p {
-  color: #B8B8B8;
+  color: #FFFFFF;
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;

@@ -8,7 +8,7 @@ const resources = {
     translation: {
       "home": "Home",
       "skills": "Skills",
-      "projects": "Projects",
+      "projects": "Explore",
       "create": "Create",
       "myPublications": "My Publications",
       "delete": "Delete",
@@ -16,7 +16,7 @@ const resources = {
       "darkMode": "Dark Mode",
       
         "welcome": "Welcome to our Blog!",
-        "tagline": "We are Unemi",
+        "tagline": "In NOTA-MENTE",
         "roles": ["Have fun", "Explore", "Learn"],
         "explore": "Explore fascinating articles, discover helpful tips, and stay updated with the latest trends on our blog...",
         "connect": "Connect",
@@ -72,7 +72,7 @@ const resources = {
    
         "home": "Inicio",
       "skills": "Habilidades",
-      "projects": "Proyectos",
+      "projects": "Explorar",
       "create": "Crear",
       "myPublications": "Mis Publicaciones",
       "delete": "Eliminar",
@@ -80,7 +80,7 @@ const resources = {
       "darkMode": "Modo Oscuro",
 
         "welcome": "Bienvenido a nuestro Blog!",
-        "tagline": "Somos Unemi",
+        "tagline": "En NOTA-MENTE",
         "roles": ["Diviertete", "Descubre", "Aprende"],
         "explore": "Explora artículos fascinantes, descubre consejos útiles y mantente al día con las últimas tendencias en nuestro blog...",
         "connect": "Conectar",
@@ -105,7 +105,8 @@ const resources = {
           "movies": "Cine",
           "others": "Otros",
           
-            "start": "Empecemos",
+            "start": "¿Por que hacemos el Blog?",
+            "text": "nanananaa",
             "firstName": "Nombres",
             "lastName": "Apellidos",
             "email": "Correo",
