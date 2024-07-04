@@ -5,7 +5,7 @@ import { List } from 'react-bootstrap-icons'; // Importamos el icono de menú
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
-import { Translate, Person, Gear, InfoCircle, FileCode, BoxArrowRight } from 'react-bootstrap-icons';
+import { Translate, Person, InfoCircle } from 'react-bootstrap-icons';
 import { useTranslation } from 'react-i18next';
 
 
@@ -67,8 +67,8 @@ const NavBar = () => {
             <Nav className="ms-auto">
               {/* Links (home, Pagina/Blog, Utilizado) */}
               <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>{t('home')}</Nav.Link>
-              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>{t('skills')}</Nav.Link>
               <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>{t('projects')}</Nav.Link>
+              <button onClick={() => changeLanguage(i18n.language === 'es' ? 'en' : 'es')} style={{ color: '#fff' }}><Translate size={24}/></button>
               {/* Dropdown */}
               <Dropdown show={showDropdown} onToggle={toggleDropdown}>
                 <Dropdown.Toggle as={Nav.Link} className="navbar-link" id="dropdown-basic">
@@ -101,12 +101,8 @@ const NavBar = () => {
       <div className={`vertical-nav ${isNavOpen ? 'open' : ''}`}>
         <ul>
           <li><button onClick={() => changeLanguage(i18n.language === 'es' ? 'en' : 'es')}><Translate size={24} /></button></li>
-          <li><button><Gear size={24} /></button></li>
           <li><button><InfoCircle size={24} /></button></li>
           <li><button><Person size={24} /></button></li>
-          <li><button><FileCode size={24} /></button></li>
-          <li><button><BoxArrowRight size={24} /></button></li>
-         
         </ul>
       </div>
     </>

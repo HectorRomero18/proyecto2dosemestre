@@ -20,7 +20,7 @@ export const Banner = () => {
     let ticker = setInterval(() => {
       tick();
     }, delta);
-     
+
     return () => { clearInterval(ticker) };
   }, [text])
 
@@ -55,21 +55,20 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">{t('welcome')}</span>
-                <h1>{t('tagline')} <span className="txt-rotate" data-period="1000" data-rotate={JSON.stringify(t('roles'))}><span className="wrap">{text}</span></span></h1>
-                <p>
-                  {t('explore')}
-                </p>
-                <button onClick={() => console.log('connect')}>{t('connect')} <ArrowRightCircle size={25} /></button>
-              </div>}
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <span className="tagline">{t('welcome')}</span>
+                  <h1>{t('tagline')} <span className="txt-rotate" data-period="1000" data-rotate={JSON.stringify(t('roles'))}><span className="wrap">{text}</span></span></h1>
+                  <p>
+                    {t('explore')}
+                  </p>
+                </div>}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
+                  <img src={headerImg} alt="Header Img" />
                 </div>}
             </TrackVisibility>
           </Col>
