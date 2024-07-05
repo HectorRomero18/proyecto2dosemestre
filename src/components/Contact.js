@@ -63,31 +63,9 @@ export const Contact = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <h2>{t('start')}</h2>
-                  <form onSubmit={handleSubmit}>
-                    <Row>
-                      <Col size={12} sm={6} className="px-1">
-                        <input type="text" value={formDetails.firstName} placeholder={t('firstName')} onChange={(e) => onFormUpdate('firstName', e.target.value)} />
-                      </Col>
-                      <Col size={12} sm={6} className="px-1">
-                        <input type="text" value={formDetails.lasttName} placeholder={t('lastName')} onChange={(e) => onFormUpdate('lastName', e.target.value)} />
-                      </Col>
-                      <Col size={12} sm={6} className="px-1">
-                        <input type="email" value={formDetails.email} placeholder={t('email')} onChange={(e) => onFormUpdate('email', e.target.value)} />
-                      </Col>
-                      <Col size={12} sm={6} className="px-1">
-                        <input type="tel" value={formDetails.phone} placeholder={t('phone')} onChange={(e) => onFormUpdate('phone', e.target.value)} />
-                      </Col>
-                      <Col size={12} className="px-1">
-                        <textarea rows="6" value={formDetails.message} placeholder={t('message')} onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
-                        <button type="submit" placeholder={t('send')}><span>{buttonText}</span></button>
-                      </Col>
-                      {status.message && (
-                        <Col>
-                          <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                        </Col>
-                      )}
-                    </Row>
-                  </form>
+                  <p>
+                  {t('text')}
+                </p>
                 </div>
               }
             </TrackVisibility>

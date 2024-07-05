@@ -90,6 +90,34 @@ nav.navbar {
   z-index: 9999;
   transition:  0.32s ease-in-out;
 }
+.navbar-text button.vvd {
+  font-weight: 700;
+  color: #121212; /* Color del texto */
+  border: 2.5px solid #fff;
+  font-size: 15px;
+  padding: 10px 20px; /* Ajuste de padding para hacerlo más pequeño */
+  margin-left: 18px;
+  background-color: #fff; /* Color de fondo */
+  transition: 0.4s ease-in-out;
+}
+
+
+.navbar-text button.vvd::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+.navbar-text button.vvd a {
+  text-decoration: none; /* Quitar la subrayado del enlace */
+}
+
+
 /* Estilos para la barra de navegación horizontal */
 .navbar {
   padding: 18px 0;
@@ -97,7 +125,7 @@ nav.navbar {
   width: 100%;
   top: 0;
   z-index: 9999;
-  transition: 0.32s ease-in-out;
+  transition: 0.22s ease-in-out;
   background-color: #121212;
 }
 
@@ -112,20 +140,25 @@ nav.navbar {
 
 .vertical-nav {
   position: fixed;
-  top: 0;
+  top: 50%;
   left: -100%;
-  height: 100%;
+  transform: translateY(-50%); /* Centra verticalmente el elemento */
+  height: 60%;
   width: 5.5cm;
-  background-color: rgb(105, 190, 243);
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, .5);
+  backdrop-filter: blur(80px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
   transition: 0.3s ease-in-out;
   z-index: 10000;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px 100px / 120px 100px;
 }
 
 .vertical-nav.open {
-  left: 0;
+  left: 0.5%;
 }
 
 .vertical-nav ul {
@@ -151,7 +184,7 @@ nav.navbar {
 }
 
 #nav-1{
-  background-color: rgb(105, 190, 243);
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
 }
 nav.navbar.scrolled {
   padding: 0px 0;
@@ -180,6 +213,7 @@ span.navbar-text {
 .social-icon {
     display: inline-block;
     margin-left: 14px;
+    margin-top: 20px; /* Espacio hacia arriba */
 }
 .social-icon a {
     width: 42px;
@@ -298,7 +332,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -372,51 +406,11 @@ padding: 200px;
 font-size: 59px
 }
 
-/************ Skills Css ************/
-.skill {
-  padding: 0 0 50px 0;
-  position: relative;
-}
-.skill-bx {
-  background: #151515;
-  border-radius: 64px;
-  text-align: center;
-  padding: 60px 50px;
-  margin-top: -60px;
-}
-.skill h2 {
-	font-size: 45px;
-	font-weight: 700;
-}
-.skill p {
-    color: #B8B8B8;
-    font-size: 18px;
-    letter-spacing: 0.8px;
-    line-height: 1.5em;
-    margin: 14px 0 75px 0;
-}
-.skill-slider {
-  width: 80%;
-  margin: 0 auto;
-  position: relative;
-}
-.skill-slider .item img {
-  width: 50%;
-  margin: 0 auto 15px auto;
-}
-.background-image-left {
-  top: 28%;
-  position: absolute;
-  bottom: 0;
-  width: 40%;
-  z-index: -4;
-}
-
 /************ Projects Css ************/
 .project {
   padding: 80px 0;
   position: relative;
-  background-color: black;
+  background-color: rgb(234, 164, 42);
 }
 .project h2 {
 	font-size: 45px;
@@ -424,7 +418,7 @@ font-size: 59px
   text-align: center;
 }
 .project p {
-  color: #B8B8B8;
+  color: #FFFFFF;
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -546,6 +540,7 @@ font-size: 59px
 .contact {
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   padding: 60px 0 200px 0;
+ 
 }
 .contact img {
   width: 92%;
@@ -553,135 +548,22 @@ font-size: 59px
 .contact h2 {
 	font-size: 45px;
 	font-weight: 700;
-  margin-bottom: 30px;
+  color: rgb(234, 164, 42);;
 }
-.contact form input, .contact form textarea {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  color: #fff;
-  margin: 0 0 8px 0;
-  padding: 18px 26px;
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 0.8px;
-  transition: 0.3s ease-in-out;
-}
-.contact form input:focus, .contact form textarea:focus {
-  background: rgba(255, 255, 255, 1);
-  color: #121212;
-}
-.contact form input::placeholder, .contact form textarea::placeholder {
-  font-size: 16px;
-  font-weight: 400;
-  color: #fff;
-}
-.contact form input:focus::placeholder, .contact form textarea:focus::placeholder {
-  color: #121212;
-  opacity: 0.8;
-}
-.contact form button {
-  font-weight: 700;
-  color: #000;
-  background-color: #fff;
-  padding: 14px 48px;
-  font-size: 18px;
-  margin-top: 25px;
-  border-radius: 0;
-  position: relative;
-  transition: 0.3s ease-in-out;
-}
-.contact form button span {
-  z-index: 1;
-  position: relative;
-}
-.contact form button:hover {
-  color: #fff;
-}
-.contact form button::before {
-  content: "";
-  background: #121212;
-  width: 0;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  transition: 0.3s ease-in-out;
-}
-.contact form button:hover::before {
-  width: 100%;
+.contact p {
+	font-size: 25px;
+	font-weight: 600;  
 }
 
 /************ Footer Css ************/
 .footer {
   padding: 0 0 50px 0;
-  background-image: url('./assets/img/footer-bg.png');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.newsletter-bx {
-  background: #FFFFFF;
-  border-radius: 55px;
-  color: #121212;
-  padding: 85px 125px;
-  margin-bottom: 80px;
-  margin-top: -122px;
-}
-.newsletter-bx h3 {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  line-height: 1.2em;
-}
-.new-email-bx {
-  background: #fff;
-  padding: 5px;
-  border-radius: 20px;
-  position: relative;
-  z-index: 0;
-  display: flex;
-  align-items: center;
-}
-.new-email-bx::before {
-  content: "";
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-  border-radius: 20px;
-  position: absolute;
-  z-index: -1;
-  top: -1px;
-  left: -1px;
-  bottom: -1px;
-  right: -1px;
+  border: 2px solid rgba(255, 255, 255, .5);
+  backdrop-filter: blur(80px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
 }
-.new-email-bx::after {
-  content: "";
-  background: #fff;
-  border-radius: 20px;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-.new-email-bx input {
-  width: 100%;
-  color: #121212;
-  font-weight: 500;
-  background: transparent;
-  border: 0;
-  padding: 0 15px;
-}
-.new-email-bx button {
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-  padding: 20px 65px;
-  color: #fff;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  border-radius: 18px;
-}
+
 .footer img {
   width: 26%;
 }
