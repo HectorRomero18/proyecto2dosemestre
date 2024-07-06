@@ -1,16 +1,19 @@
+/* Estilos para el contenedor principal del componente */
 .create-post {
   max-width: 600px; /* Establece el ancho máximo del componente */
-  margin: 20px auto; /* Centra el componente horizontalmente con un margen superior e inferior de 20px */
+  margin: 180px auto; /* Centra el componente horizontalmente con un margen superior e inferior de 20px */
   padding: 20px; /* Añade espacio interno alrededor del contenido del componente */
   background-color: #f9f9f9; /* Color de fondo */
   border-radius: 8px; /* Borde redondeado */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
+/* Estilos para los grupos de campos del formulario */
 .create-post .form-group {
   margin-bottom: 15px; /* Espacio inferior entre grupos de campos */
 }
 
+/* Estilos para las etiquetas de los campos del formulario */
 .create-post label {
   display: block; /* Muestra la etiqueta como bloque para que cada una ocupe una línea */
   font-weight: bold; /* Texto en negrita */
@@ -18,6 +21,7 @@
   color: #000; /* Cambia el color del texto a negro */
 }
 
+/* Estilos para los campos de entrada y el área de texto */
 .create-post input[type="text"],
 .create-post textarea {
   width: 100%; /* Ocupa todo el ancho disponible */
@@ -27,10 +31,12 @@
   resize: vertical; /* Permite redimensionar verticalmente el área de texto */
 }
 
+/* Ajuste de altura inicial del área de texto */
 .create-post textarea {
   height: 300px; /* Ajusta la altura inicial del área de texto a 300px */
 }
 
+/* Estilos para el botón de enviar del formulario */
 .create-post button {
   background-color: #007bff; /* Color de fondo del botón */
   color: white; /* Color del texto del botón */
@@ -41,6 +47,47 @@
   transition: background-color 0.3s ease; /* Transición suave del color de fondo */
 }
 
+/* Estilos para el botón de enviar del formulario al pasar el ratón */
 .create-post button:hover {
   background-color: #004ea2; /* Color de fondo más oscuro al pasar el ratón */
+}
+
+/* Estilos para el Navbar personalizado */
+.navbar-custom {
+  display: flex;
+  left: -0.1px;
+  justify-content: space-between; /* Espacia los elementos del Navbar */
+  align-items: center; /* Alinea los elementos del Navbar en el centro verticalmente */
+  padding: 10px 20px; /* Espacio interno del Navbar */
+  background-color: #f8f9fa; /* Color de fondo del Navbar */
+  border-bottom: 2px solid #e7e7e7; /* Borde inferior */
+  cursor: pointer;
+}
+
+/* Estilos para la marca del Navbar */
+.navbar-custom .navbar-brand {
+  display: flex;
+  align-items: center; /* Alinea los elementos de la marca en el centro verticalmente */
+  font-size: 24px; /* Tamaño de fuente de la marca */
+}
+
+.navbar-custom .house{
+ left: 100px;
+}
+
+/* Estilos para el ícono de la marca del Navbar */
+.navbar-custom .navbar-brand svg {
+  margin-right: 29px; /* Espacio a la derecha del ícono */
+}
+
+/* Estilos para el botón "Continuar" en el Navbar */
+.navbar-custom .btn-primary {
+  background-color: #007bff; /* Color de fondo del botón */
+  border-color: #007bff; /* Color del borde del botón */
+}
+
+/* Estilos para el botón "Continuar" en el Navbar al pasar el ratón */
+.navbar-custom .btn-primary:hover {
+  background-color: #0056b3; /* Color de fondo más oscuro al pasar el ratón */
+  border-color: #004085; /* Color del borde más oscuro al pasar el ratón */
 }

@@ -1,3 +1,5 @@
+// Projects.jsx
+
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
@@ -21,36 +23,42 @@ export const Projects = () => {
       title: t('technologies'),
       description: t('discoverNews'),
       imgUrl: projImg1,
+      category: 'technology',
       link: '/tecnologias'
     },
     {
       title: t('music'),
       description: t('discoverNews'),
       imgUrl: projImg2,
+      category: 'music',
       link: '/musica'
     },
     {
       title: t('sports'),
       description: t('discoverNews'),
       imgUrl: projImg3,
+      category: 'sports',
       link: '/crear'
     },
     {
       title: t('science'),
       description: t('discoverNews'),
       imgUrl: projImg4,
+      category: 'science',
       link: '/crear'
     },
     {
       title: t('movies'),
       description: t('discoverNews'),
       imgUrl: projImg5,
+      category: 'movies',
       link: '/cine'
     },
     {
       title: t('others'),
       description: t('discoverNews'),
       imgUrl: projImg6,
+      category: 'others',
       link: '/crear'
     },
   ];
@@ -65,32 +73,37 @@ export const Projects = () => {
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <h2>{t('blogPages')}</h2>
                   <p>{t('discoverNews')}</p>
-                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                  <Tab.Container id="projects-tabs" defaultActiveKey="technology">
                     <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                       <Nav.Item>
-                        <Nav.Link eventKey="first">{t('first')}</Nav.Link>
+                        <Nav.Link eventKey="technology">{t('technologies')}</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="second">{t('second')}</Nav.Link>
+                        <Nav.Link eventKey="music">{t('music')}</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="third">{t('third')}</Nav.Link>
+                        <Nav.Link eventKey="sports">{t('sports')}</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="science">{t('science')}</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="movies">{t('movies')}</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="others">{t('others')}</Nav.Link>
                       </Nav.Item>
                     </Nav>
                     <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                      <Tab.Pane eventKey="first">
-                        <Row>
-                          {projects.map((project, index) => (
-                            <ProjectCard key={index} {...project} />
-                          ))}
-                        </Row>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="second">
-                        <p>{t('noItems')}</p>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="third">
-                        <p>{t('noItems')}</p>
-                      </Tab.Pane>
+                      {['technology', 'music', 'sports', 'science', 'movies', 'others'].map(category => (
+                        <Tab.Pane eventKey={category} key={category}>
+                          <Row>
+                            {projects.filter(project => project.category === category).map((project, index) => (
+                              <ProjectCard key={index} {...project} />
+                            ))}
+                          </Row>
+                        </Tab.Pane>
+                      ))}
                     </Tab.Content>
                   </Tab.Container>
                 </div>}

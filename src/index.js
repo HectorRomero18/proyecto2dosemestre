@@ -5,8 +5,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import CreatePost from "./components/CreatePost/CreatePost.jsx"
 import PostList from "./components/PostList/PostList.jsx"
 import TeachList from "./components/TeachList/TeachList.jsx"
-import  Eliminar  from "./Pages/Eliminar"
-import  Editar  from "./Pages/Editar"
 import  Musica  from "./Pages/Musica"
 import Tecnologias  from "./Pages/Tecnologias"
 import Login  from "./Login/Register"

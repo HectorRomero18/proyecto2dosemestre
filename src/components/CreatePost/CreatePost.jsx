@@ -1,48 +1,59 @@
 import React, { useState } from 'react';
+import { Navbar, Nav, Button } from 'react-bootstrap';
+import { House, Person } from 'react-bootstrap-icons';
+import {Link} from "react-router-dom"
 import './CreatePost.css'; // Importa los estilos CSS específicos para CreatePost
 
-// Define el componente funcional CreatePost que acepta onSubmit como prop
 const CreatePost = ({ onSubmit }) => {
-  // Define dos estados locales usando useState: title y content
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
-  // Función para manejar el envío del formulario
   const handleSubmit = (event) => {
-    event.preventDefault(); // Previene el comportamiento por defecto del formulario (recargar la página)
-    onSubmit({ title, content }); // Llama a la función onSubmit pasando el título y contenido como argumentos
-    setTitle(''); // Reinicia el estado del título a una cadena vacía
-    setContent(''); // Reinicia el estado del contenido a una cadena vacía
+    event.preventDefault();
+    onSubmit({ title, content });
+    setTitle('');
+    setContent('');
   };
 
-  
-  // Renderiza el formulario de creación de post
   return (
-    <div className="create-post"> {/* Contenedor principal con clase "create-post" */}
-      <form onSubmit={handleSubmit}> {/* Formulario que llama a handleSubmit al enviar */}
-        <div className="form-group"> {/* Grupo de campo para el título */}
-          <label htmlFor="post-title">Título</label> {/* Etiqueta para el campo de entrada del título */}
+    <div className="create-post">
+      <Navbar bg="light" expand="lg" className="navbar-custom">
+        <Navbar.Brand as={Link} to="/app" >
+          <House  size={30} className="house" /> {/* Ícono de casa */}
+        </Navbar.Brand>
+        <Navbar.Brand as={Link} to="/crear">
+          <Person size={30} className="house" /> {/* Ícono de contacto/persona */}
+        </Navbar.Brand>
+        <Nav className="ml-auto">
+          <Button as={Link} to="/editar" variant="primary">Continuar</Button> {/* Botón que no lleva a ningún lado */}
+        </Nav>
+      </Navbar>
+      
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="post-title">Título</label>
           <input
             type="text"
             id="post-title"
-            value={title} // Asigna el valor del estado title al campo de entrada
-            onChange={(e) => setTitle(e.target.value)} // Maneja el cambio en el campo de entrada y actualiza el estado title
-            required // Campo requerido
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
           />
         </div>
-        <div className="form-group"> {/* Grupo de campo para el contenido del post */}
-          <label htmlFor="post-content">Contenido</label> {/* Etiqueta para el área de texto del contenido */}
+        <div className="form-group">
+          <label htmlFor="post-content">Contenido</label>
           <textarea
             id="post-content"
-            value={content} // Asigna el valor del estado content al área de texto
-            onChange={(e) => setContent(e.target.value)} // Maneja el cambio en el área de texto y actualiza el estado content
-            required // Campo requerido
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            required
           />
         </div>
-        <button type="submit">Crear Post</button> {/* Botón para enviar el formulario */}
+        <button type="submit">Crear Post</button> {/* Botón original del formulario */}
       </form>
     </div>
   );
 };
 
-export default CreatePost; // Exporta el componente CreatePost para ser usado en otros componentes
+export default CreatePost;
+
