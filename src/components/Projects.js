@@ -1,6 +1,4 @@
-// Projects.jsx
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
@@ -9,15 +7,25 @@ import projImg2 from "../assets/img/musica.jfif";
 import projImg3 from "../assets/img/sports.jfif";
 import projImg4 from "../assets/img/ciencia.jfif";
 import projImg5 from "../assets/img/Cine.jfif";
-import projImg6 from "../assets/img/otro.jfif";
+import projImg6 from "../assets/img/otro.jfif"; // Imagen de "Otros"
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import { Link } from "react-router-dom";
 
-export const Projects = () => {
+const Projects = () => {
   const { t } = useTranslation();
 
+  // Estado para guardar los posts creados
+  const [createdPosts, setCreatedPosts] = useState([]);
+
+  // Cargar los posts desde localStorage al cargar el componente
+  useEffect(() => {
+    const storedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+    setCreatedPosts(storedPosts);
+  }, []);
+
+  // Definir proyectos predefinidos
   const projects = [
     {
       title: t('technologies'),
@@ -98,8 +106,18 @@ export const Projects = () => {
                       {['technology', 'music', 'sports', 'science', 'movies', 'others'].map(category => (
                         <Tab.Pane eventKey={category} key={category}>
                           <Row>
+                            {/* Mostrar proyectos predefinidos */}
                             {projects.filter(project => project.category === category).map((project, index) => (
                               <ProjectCard key={index} {...project} />
+                            ))}
+                            {/* Mostrar posts creados solo en la pestaña "Otros" */}
+                            {category === 'others' && createdPosts.map((post, index) => (
+                              <ProjectCard
+                                key={index}
+                                title={post.title}
+                                description={post.content} // Usar contenido como descripción
+                                imgUrl={projImg6} // Usar la imagen de "Otros"
+                              />
                             ))}
                           </Row>
                         </Tab.Pane>
@@ -115,3 +133,5 @@ export const Projects = () => {
     </section>
   )
 }
+
+export default Projects;

@@ -1,44 +1,49 @@
-import React, { useState } from 'react';
-import './TeachList.css'; // Asegúrate de importar tu archivo CSS
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import './TeachList.css'; // Importa el archivo CSS para estilizar el componente
 
-// Estado para rastrear el índice de la publicación expandida
-function TeachList({ posts = [] }) {
-  const [expandedPostIndex, setExpandedPostIndex] = useState(null);
+const TeachList = () => {
+  const location = useLocation(); // Obtiene la ubicación actual de la ruta
+  const [posts, setPosts] = useState(
+    location.state?.posts || JSON.parse(localStorage.getItem('posts')) || [] // Estado inicial para almacenar los posts
+  );
+  const [selectedPostIndex, setSelectedPostIndex] = useState(null); // Estado para mantener el índice del post seleccionado
 
-  // Función para alternar entre expandir y contraer el contenido de la publicación
-  const toggleReadMore = (index) => {
-    setExpandedPostIndex(expandedPostIndex === index ? null : index);
+  useEffect(() => {
+    // Efecto que se ejecuta cuando cambia el estado de la ubicación
+    if (location.state?.posts) {
+      // Actualiza los posts si hay nuevos posts en el estado de la ubicación
+      setPosts(location.state.posts);
+    }
+  }, [location.state]); // Dependencia del efecto: se ejecuta cuando location.state cambia
+
+  // Función para manejar el clic en un post
+  const handlePostClick = (index) => {
+    setSelectedPostIndex(selectedPostIndex === index ? null : index); // Alterna entre seleccionar y deseleccionar el post
   };
 
   return (
     <div className="teach-list">
-      {/* Verifica si hay publicaciones */}
       {posts.length > 0 ? (
-        posts.map((post, index) => {
-          // Determina si la publicación está expandida
-          const isExpanded = expandedPostIndex === index;
-          // Determina qué contenido mostrar
-          const contentToShow = isExpanded ? post.content : post.content.substring(0, 100) + (post.content.length > 100 ? '...' : '');
-
-          return (
-            <div key={index} className="teach-post"> {/* Contenedor de cada publicación */}
-              <h3>{post.title}</h3> {/* Título de la publicación */}
-              {/* Contenido de la publicación, ajustado según esté expandido o no */}
-              <p style={{ maxHeight: isExpanded ? 'none' : '200px' }}>{contentToShow}</p>
-              {/* Verifica si la longitud del contenido es mayor a 100 caracteres */}
-              {post.content.length > 100 && (
-                <button className="read-more" onClick={() => toggleReadMore(index)}>{/* Botón para expandir/cerrar */}
-                  {isExpanded ? 'Leer menos' : 'Leer más'} {/* Texto dinámico basado en si está expandido o no */}
-                </button>
-              )}
+        <>
+          <h2>Posts Creados</h2>
+          {posts.map((post, index) => (
+            <div 
+              key={index} 
+              className={`post ${selectedPostIndex === index ? 'selected' : ''}`} 
+              onClick={() => handlePostClick(index)}
+            >
+              <h3>Título: {post.title}</h3>
+              <p>Contenido: {post.content}</p>
             </div>
-          );
-        })
+          ))}
+        </>
       ) : (
-        <p>No hay publicaciones aún.</p>
+        <h2>No se ha creado ningún post</h2>
       )}
     </div>
   );
-}
+};
 
 export default TeachList;
+

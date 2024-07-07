@@ -1,46 +1,40 @@
-/* Estilos para TeachList */
-
 .teach-list {
-  max-width: 600px; /* Ancho máximo del contenedor de TeachList */
-  margin: 20px auto; /* Margen superior e inferior de 20px y centrado horizontalmente */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.teach-post {
-  padding: 15px; /* Espacio interno alrededor del contenido de cada publicación */
-  background-color: #ffffff; /* Fondo blanco para cada publicación */
-  border-radius: 8px; /* Borde redondeado */
-  margin-bottom: 15px; /* Espacio inferior entre cada publicación */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves al hacer hover */
+.teach-list h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #343a40;
 }
 
-.teach-post:hover {
-  transform: translateY(-5px); /* Eleva ligeramente la publicación al hacer hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hacer hover */
+.post {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, z-index 0.3s ease;
+  cursor: pointer;
+  position: relative;
 }
 
-.teach-post h3 {
-  color: #333; /* Color negro para el título */
+.post h3 {
+  margin-top: 0;
+  color: #007bff;
 }
 
-.teach-post p {
-  color: #333; /* Color negro para el contenido */
-  line-height: 1.6; /* Altura de línea del texto */
-  overflow: hidden; /* Oculta cualquier contenido que desborde */
-  transition: max-height 0.3s ease-out; /* Transición suave para la altura máxima */
-  max-height: 200px; /* Altura máxima del contenido antes de ser recortado */
+.post p {
+  color: #495057;
 }
 
-.teach-post .read-more {
-  background-color: #007bff; /* Color de fondo del botón Leer más */
-  color: white; /* Color del texto del botón */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Borde redondeado */
-  padding: 8px 12px; /* Espacio interno del botón */
-  cursor: pointer; /* Cursor al pasar por encima */
-  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
-}
-
-.teach-post .read-more:hover {
-  background-color: #014ea1; /* Color de fondo más oscuro al hacer hover */
+.post.selected {
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
