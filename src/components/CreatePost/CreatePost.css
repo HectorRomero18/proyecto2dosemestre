@@ -1,16 +1,29 @@
 /* Estilos para el contenedor principal del componente */
-.create-post {
-  max-width: 600px; /* Establece el ancho máximo del componente */
-  margin: 180px auto; /* Centra el componente horizontalmente con un margen superior e inferior de 20px */
-  padding: 20px; /* Añade espacio interno alrededor del contenido del componente */
-  background-color: #f9f9f9; /* Color de fondo */
-  border-radius: 8px; /* Borde redondeado */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+body {
+  padding-top: 80px; /* Ajusta el espacio superior para dejar espacio al NavBar */
 }
+
+.create-post {
+  text-align: center;
+  position: fixed; /* Fija el componente en una posición */
+  top: 80px; /* Ajusta la posición superior para evitar que se solape con el NavBar */
+  left: 0; /* Coloca el componente en la parte izquierda */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: calc(100% - 80px); /* Ajusta la altura restando el espacio del NavBar */
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  border-radius: 0; /* Borde redondeado */
+  box-shadow: none; /* Sin sombra */
+  padding: 20px; /* Añade espacio interno alrededor del contenido del componente */
+  overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede la altura */
+}
+
 
 /* Estilos para los grupos de campos del formulario */
 .create-post .form-group {
+  background-color: goldenrod ;
   margin-bottom: 15px; /* Espacio inferior entre grupos de campos */
+  text-align: center;
+  font-size: 30px;
 }
 
 /* Estilos para las etiquetas de los campos del formulario */
@@ -24,6 +37,7 @@
 /* Estilos para los campos de entrada y el área de texto */
 .create-post input[type="text"],
 .create-post textarea {
+  text-align: center;
   width: 100%; /* Ocupa todo el ancho disponible */
   padding: 10px; /* Espacio interno dentro de los campos de entrada y área de texto */
   border: 1px solid #ccc; /* Borde delgado con color gris claro */
@@ -38,11 +52,12 @@
 
 /* Estilos para el botón de enviar del formulario */
 .create-post button {
+  font-size: 28px;
   background-color: #007bff; /* Color de fondo del botón */
   color: white; /* Color del texto del botón */
   border: none; /* Sin borde */
-  border-radius: 5px; /* Borde redondeado */
-  padding: 10px 15px; /* Espacio interno del botón */
+  border-radius: 8px; /* Borde redondeado */
+  padding: 20px 25px; /* Espacio interno del botón */
   cursor: pointer; /* Cursor al pasar por encima */
   transition: background-color 0.3s ease; /* Transición suave del color de fondo */
 }
@@ -54,12 +69,12 @@
 
 /* Estilos para el Navbar personalizado */
 .navbar-custom {
+  background-color: goldenrod;
   display: flex;
   left: -0.1px;
   justify-content: space-between; /* Espacia los elementos del Navbar */
   align-items: center; /* Alinea los elementos del Navbar en el centro verticalmente */
   padding: 10px 20px; /* Espacio interno del Navbar */
-  background-color: #f8f9fa; /* Color de fondo del Navbar */
   border-bottom: 2px solid #e7e7e7; /* Borde inferior */
   cursor: pointer;
 }
@@ -87,7 +102,3 @@
 }
 
 /* Estilos para el botón "Continuar" en el Navbar al pasar el ratón */
-.navbar-custom .btn-primary:hover {
-  background-color: #0056b3; /* Color de fondo más oscuro al pasar el ratón */
-  border-color: #004085; /* Color del borde más oscuro al pasar el ratón */
-}

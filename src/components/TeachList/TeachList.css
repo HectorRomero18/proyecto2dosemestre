@@ -1,40 +1,63 @@
-.teach-list {
-  max-width: 800px;
-  margin: 0 auto;
+/* TeachList.css */
+.teach-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Altura mínima del viewport */
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
-.teach-list h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #343a40;
+.teach-list {
+  width: 100%; /* Ajusta el ancho al 100% del contenedor */
+  max-width: 800px; /* Ancho máximo para el componente */
+  height: auto; /* Ajusta la altura automáticamente según el contenido */
+  background-color: #ffffff; /* Color de fondo del componente */
+  padding: 20px;
+  border-radius: 8px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de profundidad */
+}
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los posts se envuelvan automáticamente */
+  gap: 20px; /* Espacio entre las cartas */
 }
 
 .post {
-  background-color: #ffffff;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, z-index 0.3s ease;
+  flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+  color: black;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
   cursor: pointer;
-  position: relative;
-}
-
-.post h3 {
-  margin-top: 0;
-  color: #007bff;
-}
-
-.post p {
-  color: #495057;
+  transition: transform 0.3s ease; /* Transición suave al seleccionar el post */
 }
 
 .post.selected {
-  transform: scale(1.1);
-  z-index: 10;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Aumenta el tamaño del post seleccionado */
+  background-color: #f9f9f9; /* Cambia el fondo del post seleccionado */
+}
+
+/* Añade estilos responsivos */
+@media (max-width: 768px) {
+  .teach-list {
+    padding: 10px;
+  }
+
+  .post {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .teach-list {
+    padding: 5px;
+  }
+
+  .post {
+    padding: 5px;
+  }
 }

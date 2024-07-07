@@ -1,0 +1,31 @@
+.edit-post {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  
+  }
+  
+  .post-header {
+    color: black;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .post-content {
+    color: black;
+    margin-bottom: 10px;
+  }
+  
+  .button-group {
+    text-align: right;
+  }
+  
+  .edit-button,
+  .save-button,
+  .cancel-button,
+  .delete-button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  

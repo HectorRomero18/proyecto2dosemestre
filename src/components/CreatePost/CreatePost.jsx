@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'; // Importa el hook useNavigate p
 import { Navbar, Nav, Button } from 'react-bootstrap'; // Importa componentes de react-bootstrap
 import { House, Person } from 'react-bootstrap-icons'; // Importa iconos de react-bootstrap-icons
 import { Link } from 'react-router-dom'; // Importa Link para la navegación entre rutas
+import { v4 as uuidv4 } from 'uuid'; // Importa uuid para generar identificadores únicos
 import './CreatePost.css'; // Importa estilos CSS específicos para CreatePost
 
 const CreatePost = () => {
@@ -14,8 +15,8 @@ const CreatePost = () => {
   const handleSubmit = (event) => {
     event.preventDefault(); // Previene el comportamiento por defecto del formulario
 
-    // Crea un objeto post con el título y el contenido actuales
-    const post = { title, content };
+    // Crea un objeto post con el título, el contenido y un identificador único
+    const post = { id: uuidv4(), title, content };
 
     // Obtiene los posts actuales de localStorage o inicializa un arreglo vacío si no hay ninguno
     const existingPosts = JSON.parse(localStorage.getItem('posts')) || [];
@@ -77,4 +78,5 @@ const CreatePost = () => {
 };
 
 export default CreatePost;
+
 

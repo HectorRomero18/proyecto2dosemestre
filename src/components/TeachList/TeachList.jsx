@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Navbar, Nav, Button } from 'react-bootstrap'; // Importa componentes de react-bootstrap
+import { House, Person } from 'react-bootstrap-icons'; // Importa iconos de react-bootstrap-icons
 import './TeachList.css'; // Importa el archivo CSS para estilizar el componente
+import Comentarios from '../Comentarios/Comentarios';
 
 const TeachList = () => {
   const location = useLocation(); // Obtiene la ubicación actual de la ruta
@@ -23,27 +26,45 @@ const TeachList = () => {
   };
 
   return (
-    <div className="teach-list">
-      {posts.length > 0 ? (
-        <>
-          <h2>Posts Creados</h2>
-          {posts.map((post, index) => (
-            <div 
-              key={index} 
-              className={`post ${selectedPostIndex === index ? 'selected' : ''}`} 
-              onClick={() => handlePostClick(index)}
-            >
-              <h3>Título: {post.title}</h3>
-              <p>Contenido: {post.content}</p>
-            </div>
-          ))}
-        </>
-      ) : (
-        <h2>No se ha creado ningún post</h2>
-      )}
-    </div>
+    <>
+      {/* Navbar */}
+      <Navbar bg="light" expand="lg" className="navbar-custom">
+        <Navbar.Brand href="/app">
+          <House size={30} className="house" /> {/* Ícono de casa */}
+        </Navbar.Brand>
+        <Navbar.Brand href="/crear">
+          <Person size={30} className="house" /> {/* Ícono de persona/contacto */}
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      </Navbar>
+
+      {/* Contenido principal */}
+      <div className="teach-list-container">
+        <div className="teach-list">
+          {posts.length > 0 ? (
+            <>
+              <h2>Posts Creados</h2>
+              <div className="post-list">
+                {posts.map((post, index) => (
+                  <div
+                    key={index}
+                    className={`post ${selectedPostIndex === index ? 'selected' : ''}`}
+                    onClick={() => handlePostClick(index)}
+                  >
+                    <h3>Título: {post.title}</h3>
+                    <p>Contenido: {post.content}</p>
+                    <Comentarios />
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : (
+            <h2>No se ha creado ningún post</h2>
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 
 export default TeachList;
-

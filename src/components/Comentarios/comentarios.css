@@ -1,0 +1,56 @@
+.comentarios-container {
+   color: black;
+    max-width: 50%;
+    margin: auto;
+    padding: 10px;
+    border: 6px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .lista-comentarios {
+    margin-top: 20px;
+  }
+  
+  .comentario {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .comentario .usuario {
+    color: black;
+    font-weight: bold;
+}
+
+.comentario .contenido {
+      color: black;
+    margin-bottom: 10px;
+  }
+  
+  .comentario .acciones {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .like-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .like-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  .fecha {
+    font-size: 0.8em;
+    color: #666;
+  }
+  

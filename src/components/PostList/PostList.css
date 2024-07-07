@@ -22,12 +22,12 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.post h3 {
+.post h2 {
   color: #333; /* Color negro para el título */
 }
 
 .post p {
-  color: #333; /* Color negro para el contenido */
+  color: #010000; /* Color negro para el contenido */
   line-height: 1.6;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
@@ -118,41 +118,4 @@
 
 .cancel-button:hover {
   background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
-}
-
-/* Estilos para el formulario de edición */
-
-.edit-form {
-  margin-top: 20px; /* Espacio superior entre el formulario y el contenido anterior */
-  width: 100%; /* Ajusta el ancho del formulario de edición */
-}
-
-.edit-form textarea {
-  width: calc(100% - 20px); /* Ocupa el ancho completo del contenedor menos el espacio del padding */
-  height: 300px; /* Ajusta la altura del área de texto según sea necesario */
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  resize: vertical; /* Permite redimensionar verticalmente */
-}
-
-.edit-form .button-group {
-  display: flex;
-  gap: 15px; /* Espacio entre los botones */
-  margin-top: 15px; /* Espacio superior entre el grupo de botones y el contenido anterior */
-}
-
-.edit-form .button-group button {
-  flex: 1;
-}
-
-/* Ajuste para separar los botones Editar y Eliminar */
-.edit-post {
-  margin-top: 10px;
-}
-
-/* Color negro para el texto "No hay publicaciones aún." */
-.no-posts {
-  color: #000000;
-  text-align: center;
 }
