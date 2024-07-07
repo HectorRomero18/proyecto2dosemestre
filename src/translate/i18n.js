@@ -11,7 +11,7 @@ const resources = {
       "projects": "Explore",
       "create": "Create",
       "myPublications": "My Publications",
-      "delete": "Delete",
+      "edit": "Edit",
       "logout": "Log out",
       "darkMode": "Dark Mode",
       
@@ -48,7 +48,7 @@ const resources = {
       "projects": "Explorar",
       "create": "Crear",
       "myPublications": "Mis Publicaciones",
-      "delete": "Eliminar",
+      "edit": "Editar",
       "logout": "Cerrar Sesión",
       "darkMode": "Modo Oscuro",
 

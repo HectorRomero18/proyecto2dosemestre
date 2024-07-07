@@ -88,7 +88,7 @@ const NavBar = () => {
                 <Dropdown.Menu>
                   <Dropdown.Item as={Link} to="/crear">{t('create')}</Dropdown.Item>
                   <Dropdown.Item as={Link} to="/editar">{t('myPublications')}</Dropdown.Item>
-                  <Dropdown.Item as={Link} to="/eliminar">{t('delete')}</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/eliminar">{t('edit')}</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </Nav>
