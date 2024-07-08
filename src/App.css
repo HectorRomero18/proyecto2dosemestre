@@ -412,11 +412,13 @@ font-size: 59px
   position: relative;
   background-color: rgb(234, 164, 42);
 }
+
 .project h2 {
-	font-size: 45px;
-	font-weight: 700;
+  font-size: 45px;
+  font-weight: 700;
   text-align: center;
 }
+
 .project p {
   color: #FFFFFF;
   font-size: 18px;
@@ -426,6 +428,7 @@ font-size: 59px
   text-align: center;
   width: 56%;
 }
+
 .project .nav.nav-pills {
   width: 72%;
   margin: 0 auto;
@@ -433,9 +436,11 @@ font-size: 59px
   background-color: rgb(255 255 255 / 10%);
   overflow: hidden;
 }
+
 .project .nav.nav-pills .nav-item {
   width: 33.33333%;
 }
+
 .project .nav.nav-pills .nav-link {
   background-color: transparent;
   border-radius: 0;
@@ -451,42 +456,53 @@ font-size: 59px
   z-index: 0;
   cursor: pointer;
 }
+
 .project .nav.nav-pills .nav-link::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 100%;
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
 }
+
 .project .nav.nav-pills .nav-link.active::before {
-    width: 100% !important;
+  width: 100% !important;
 }
+
 .project .nav.nav-pills .nav-link.active {
-    border: 1px solid rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 1);
 }
+
 .nav-link#projects-tabs-tab-first {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 55px 0px 0px 55px;
 }
+
 .nav-link#projects-tabs-tab-second {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
+
 .nav-link#projects-tabs-tab-third {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0 55px 55px 0;
 }
+
 .proj-imgbx {
   position: relative;
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 24px;
   cursor: pointer;
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center;    /* Centrar verticalmente */
 }
+
 .proj-imgbx::before {
   content: "";
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
@@ -496,9 +512,11 @@ font-size: 59px
   height: 0;
   transition: 0.4s ease-in-out;
 }
+
 .proj-imgbx:hover::before {
   height: 100%;
 }
+
 .proj-txtx {
   position: absolute;
   text-align: center;
@@ -509,10 +527,12 @@ font-size: 59px
   opacity: 0;
   width: 100%;
 }
+
 .proj-imgbx:hover .proj-txtx {
   top: 50%;
   opacity: 1;
 }
+
 .proj-txtx h4 {
   color: #fff;
   font-size: 30px;
@@ -520,6 +540,7 @@ font-size: 59px
   letter-spacing: 0.8px;
   line-height: 1.1em;
 }
+
 .proj-txtx span {
   color: #fff;
   font-style: italic;
@@ -527,6 +548,7 @@ font-size: 59px
   font-size: 15px;
   letter-spacing: 0.8px;
 }
+
 .background-image-right {
   top: 20%;
   position: absolute;
@@ -535,6 +557,7 @@ font-size: 59px
   right: 0;
   z-index: -4;
 }
+
 
 /************ Css para la parte de Contacto ************/
 .contact {
@@ -629,3 +652,109 @@ font-size: 59px
   }
 }
 
+/* CSS PARA CIENCIA.JS */
+.ciencia-container {
+  min-height: 100vh; /* Altura mínima del viewport */
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.navbar-custom {
+  display: flex;
+  justify-content: space-between; /* Espacia los elementos del Navbar */
+  align-items: center; /* Alinea los elementos del Navbar en el centro verticalmente */
+  padding: 10px 20px; /* Espacio interno del Navbar */
+  background-color: #f8f9fa; /* Color de fondo del Navbar */
+  border-bottom: 2px solid #e7e7e7; /* Borde inferior */
+}
+
+.navbar-custom .house {
+  margin-right: 10px; /* Espacio a la derecha del ícono */
+}
+
+.news-list {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las cartas se ajusten en múltiples filas */
+  justify-content: center;
+  gap: 20px; /* Espacio entre las cartas */
+}
+
+.news-card {
+  background-color: #ffffff; /* Color de fondo de las cartas */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de profundidad */
+  max-width: 300px; /* Ancho máximo de las cartas */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+  text-align: center; /* Centra el texto dentro de las cartas */
+}
+
+.news-image {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho de la carta */
+  height: 200px; /* Establece una altura fija para la imagen */
+  object-fit: cover; /* Cubre toda el área sin distorsión */
+  border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+.news-content {
+  padding: 10px;
+}
+
+.news-card h3 {
+  color: black;
+  font-size: 1.25em; /* Tamaño de fuente del título */
+  margin-bottom: 10px; /* Espacio inferior del título */
+}
+
+.news-card p {
+  color: black;
+  font-size: 1em; /* Tamaño de fuente de la descripción */
+  margin-bottom: 20px; /* Espacio inferior de la descripción */
+}
+
+.news-card a {
+  color: #007bff; /* Color del enlace */
+  text-decoration: none; /* Sin subrayado en el enlace */
+}
+
+.news-card a:hover {
+  text-decoration: underline; /* Subraya el enlace al pasar el ratón */
+}
+
+/* CSS PARA DEPORTES.JS */
+.deportes-container {
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  min-height: 100vh;
+  padding: 20px;
+  color: black;
+}
+
+.navbar-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #e7e7e7;
+}
+
+.navbar-custom .house {
+  margin-right: 10px;
+}
+
+.news-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.news-card img {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.news-card .btn {
+  margin-top: auto;
+}

@@ -16,7 +16,7 @@ const resources = {
       "darkMode": "Dark Mode",
       
         "welcome": "Welcome to our Blog!",
-        "tagline": "In NOTA-MENTE",
+        "tagline": "In PIXEL NOTES",
         "roles": ["Have fun", "Explore", "Learn"],
         "explore": "Explore fascinating articles, discover helpful tips, and stay updated with the latest trends on our blog...",
         
@@ -53,7 +53,7 @@ const resources = {
       "darkMode": "Modo Oscuro",
 
         "welcome": "Bienvenido a nuestro Blog!",
-        "tagline": "En NOTA-MENTE",
+        "tagline": "En PIXEL NOTES",
         "roles": ["Diviertete", "Descubre", "Aprende"],
         "explore": "Explora artículos fascinantes, descubre consejos útiles y mantente al día con las últimas tendencias en nuestro blog...",
       

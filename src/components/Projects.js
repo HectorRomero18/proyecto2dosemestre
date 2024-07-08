@@ -11,7 +11,6 @@ import projImg6 from "../assets/img/otro.jfif"; // Imagen de "Otros"
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-import { Link } from "react-router-dom";
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -46,14 +45,14 @@ const Projects = () => {
       description: t('discoverNews'),
       imgUrl: projImg3,
       category: 'sports',
-      link: '/crear'
+      link: '/deportes'
     },
     {
       title: t('science'),
       description: t('discoverNews'),
       imgUrl: projImg4,
       category: 'science',
-      link: '/crear'
+      link: '/ciencia'
     },
     {
       title: t('movies'),
@@ -105,7 +104,7 @@ const Projects = () => {
                     <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                       {['technology', 'music', 'sports', 'science', 'movies', 'others'].map(category => (
                         <Tab.Pane eventKey={category} key={category}>
-                          <Row>
+                          <Row className="justify-content-center">
                             {/* Mostrar proyectos predefinidos */}
                             {projects.filter(project => project.category === category).map((project, index) => (
                               <ProjectCard key={index} {...project} />
@@ -131,7 +130,7 @@ const Projects = () => {
       </Container>
       <img className="background-image-right" src={colorSharp2} alt="Image" />
     </section>
-  )
-}
+  );
+};
 
 export default Projects;

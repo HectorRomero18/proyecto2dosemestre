@@ -6,7 +6,9 @@ import CreatePost from "./components/CreatePost/CreatePost.jsx"
 import PostList from "./components/PostList/PostList.jsx"
 import TeachList from "./components/TeachList/TeachList.jsx"
 import  Musica  from "./Pages/Musica"
+import  Ciencia from "./Pages/Ciencia"
 import Tecnologias  from "./Pages/Tecnologias"
+import Deportes  from "./Pages/Deportes"
 import Login  from "./Login/Register"
 import Cine  from "./Pages/Cine"
 import  "./translate/i18n"
@@ -41,6 +43,14 @@ const routers = createBrowserRouter([
     {
         path: '/cine',
         element: <Cine/>
+    },
+    {
+        path: '/ciencia',
+        element: <Ciencia/>
+    },
+    {
+        path: '/deportes',
+        element: <Deportes/>
     },
     {
         path: '/app',
