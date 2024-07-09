@@ -1,12 +1,22 @@
+/* PostList CSS */
+/* Fondo de toda la pantalla */
+body {
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  min-height: 100vh; /* Asegura que el fondo cubra toda la altura de la pantalla */
+  margin: 0;
+}
+
+/* Estilos para la lista de posts */
 .post-list {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para cada post */
 .post {
   position: relative;
   padding: 20px 15px; /* Aumenta el espacio interno verticalmente */
@@ -17,15 +27,18 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Estilos para el post al pasar el ratón */
 .post:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilos para el título del post */
 .post h2 {
   color: #333; /* Color negro para el título */
 }
 
+/* Estilos para el contenido del post */
 .post p {
   color: #010000; /* Color negro para el contenido */
   line-height: 1.6;
@@ -34,10 +47,12 @@
   margin-bottom: 15px; /* Espacio inferior entre el contenido y el botón "Leer más" */
 }
 
+/* Estilos para el contenido expandido del post */
 .post p.expanded {
   max-height: none; /* Sin límite de altura cuando está expandido */
 }
 
+/* Estilos para los botones eliminar y editar */
 .delete-button,
 .edit-button {
   background-color: #dc3545; /* Rojo para eliminar */
@@ -53,19 +68,23 @@
   margin-top: 10px; /* Alineación con otros botones */
 }
 
+/* Estilos para el botón eliminar al pasar el ratón */
 .delete-button:hover,
 .edit-button:hover {
   background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
 }
 
+/* Estilos para el botón editar */
 .edit-button {
   background-color: #28a745; /* Verde para editar */
 }
 
+/* Estilos para el botón editar al pasar el ratón */
 .edit-button:hover {
   background-color: #218838; /* Verde más oscuro al pasar el ratón */
 }
 
+/* Estilos para el botón "Leer más" */
 .read-more {
   background-color: #007bff;
   color: white;
@@ -80,10 +99,12 @@
   margin-top: 10px; /* Espacio superior entre el contenido y el botón "Leer más" */
 }
 
+/* Estilos para el botón "Leer más" al pasar el ratón */
 .read-more:hover {
   background-color: #0056b3;
 }
 
+/* Estilos para el botón guardar cambios */
 .save-button {
   background-color: #28a745; /* Verde para guardar cambios */
   color: white;
@@ -98,10 +119,12 @@
   margin-top: 10px; /* Alineación con otros botones */
 }
 
+/* Estilos para el botón guardar cambios al pasar el ratón */
 .save-button:hover {
   background-color: #218838; /* Verde más oscuro al pasar el ratón */
 }
 
+/* Estilos para el botón cancelar */
 .cancel-button {
   background-color: #007bff; /* Azul para cancelar */
   color: white;
@@ -116,6 +139,7 @@
   margin-top: 10px; /* Alineación con otros botones */
 }
 
+/* Estilos para el botón cancelar al pasar el ratón */
 .cancel-button:hover {
   background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Navbar, Nav, Button } from 'react-bootstrap'; // Importa componentes de react-bootstrap
+import { Navbar, Nav } from 'react-bootstrap'; // Importa componentes de react-bootstrap
 import { House, Person } from 'react-bootstrap-icons'; // Importa iconos de react-bootstrap-icons
 import './TeachList.css'; // Importa el archivo CSS para estilizar el componente
 import Comentarios from '../Comentarios/Comentarios';
