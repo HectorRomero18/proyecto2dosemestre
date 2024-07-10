@@ -1,31 +1,35 @@
-
+/* Estilo general para el contenedor del post */
 .edit-post {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
+    border: 1px solid #ccc;/* Borde del contenedor */
+    padding: 10px;/* Espaciado interno del contenedor */
+    margin-bottom: 10px;/* Espacio inferior para separar los posts */
   }
-  
+
+  /* Estilo para el encabezado del post */
   .post-header {
-    color: black;
-    text-align: center;
-    margin-bottom: 10px;
+    color: black;/* Color del texto */
+    text-align: center;/* Alineación centrada del texto */
+    margin-bottom: 10px; /* Espacio inferior para separar el encabezado del contenido */
   }
   
+  /* Estilo para el contenido del post */
   .post-content {
-    color: black;
-    margin-bottom: 10px;
+    color: black;/* Color del texto */
+    margin-bottom: 10px;/* Espacio inferior para separar el contenido de los botones */
   }
   
+  /* Estilo para el contenedor de botones */
   .button-group {
-    text-align: right;
+    text-align: right;/* Alineación a la derecha de los botones */
   }
   
+  /* Estilo para los botones de edición, guardado, cancelación y eliminación */
   .edit-button,
   .save-button,
   .cancel-button,
   .delete-button {
-    margin-left: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
+    margin-left: 5px; /* Espacio a la izquierda de cada botón */
+    padding: 5px 10px; /* Espaciado interno del botón (vertical y horizontal) */
+    cursor: pointer;/* Cambia el cursor al pasar sobre el botón */
   }
   
