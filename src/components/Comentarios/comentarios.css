@@ -1,13 +1,20 @@
 .comentarios-container {
    color: black;
-    max-width: 50%;
-    margin: auto;
+    width: 100%; /* Ancho completo */
+    max-width: 800%;
+    margin-top:10px;
     padding: 10px;
     border: 6px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  
+  /* Comentarios.css */
+.comentario-item {
+  word-wrap: break-word; /* Permite el ajuste de palabras largas */
+  overflow-wrap: break-word; /* Permite el ajuste de palabras largas */
+  white-space: pre-wrap; /* Mantiene los saltos de línea si los hay */
+
+}
   .lista-comentarios {
     margin-top: 20px;
   }
