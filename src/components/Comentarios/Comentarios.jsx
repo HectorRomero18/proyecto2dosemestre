@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import { HandThumbsUp } from 'react-bootstrap-icons'; // Importa el ícono de HandThumbsUp desde react-bootstrap-icons
 import './comentarios.css'; // Estilos CSS personalizados
@@ -9,13 +9,21 @@ const Comentarios = () => {
   // Estado para almacenar el nuevo comentario que se está escribiendo
   const [nuevoComentario, setNuevoComentario] = useState('');
 
+  // Cargar comentarios al iniciar
+  useEffect(() => {
+    const storedComentarios = JSON.parse(localStorage.getItem('comentarios'));
+    if (storedComentarios) {
+      setComentarios(storedComentarios);
+    }
+  }, []);
+
   // Función para manejar el envío del formulario de comentario
   const handleSubmit = (event) => {
     event.preventDefault(); // Previene el comportamiento por defecto del formulario (recargar la página)
     if (nuevoComentario.trim() === '') {
       return; // Evita agregar comentarios vacíos
     }
-    
+
     // Crea un objeto de comentario nuevo
     const nuevoComentarioObj = {
       id: comentarios.length + 1, // Genera un ID único basado en la longitud actual de comentarios
@@ -24,9 +32,13 @@ const Comentarios = () => {
       fecha: new Date().toLocaleString(), // Fecha y hora actual del comentario
       likes: 0 // Inicialmente el comentario no tiene likes
     };
-    
+
     // Actualiza el estado de comentarios agregando el nuevo comentario
-    setComentarios([...comentarios, nuevoComentarioObj]);
+    const updatedComentarios = [...comentarios, nuevoComentarioObj];
+    setComentarios(updatedComentarios);
+    // Guarda los comentarios en localStorage
+    localStorage.setItem('comentarios', JSON.stringify(updatedComentarios));
+
     // Reinicia el estado del nuevo comentario a una cadena vacía
     setNuevoComentario('');
   };
@@ -40,15 +52,18 @@ const Comentarios = () => {
       }
       return comentario;
     });
+
     // Actualiza el estado de comentarios con la lista actualizada que contiene el comentario con el like incrementado
     setComentarios(updatedComentarios);
+    // Guarda los comentarios actualizados en localStorage
+    localStorage.setItem('comentarios', JSON.stringify(updatedComentarios));
   };
 
   // Renderiza el componente de comentarios
   return (
     <Container className="comentarios-container">
       <h2>Comentarios</h2>
-      
+
       {/* Formulario para agregar nuevos comentarios */}
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formComentario">
@@ -67,7 +82,7 @@ const Comentarios = () => {
           Agregar Comentario
         </Button>
       </Form>
-      
+
       {/* Lista de comentarios */}
       <div className="lista-comentarios">
         {/* Verifica si hay comentarios para mostrar */}
